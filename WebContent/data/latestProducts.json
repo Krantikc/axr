@@ -1,0 +1,29 @@
+[{
+		"productId": 3001,
+		"name": "AXR32",
+        "description": "AGV PISTA GP DOT motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"defaultColor": {"id":502,"name":"black"},
+		"graphics": [{"id":601,"name":"flare"}, {"id":602,"name":"mono"},{"id":603,"name":"stripes"}],
+		"defaultGraphics": {"id":602, "name":"mono"},
+		"graphicsColors": [{"id":701,"name":"red"}, {"id":702,"name":"blue"}, {"id":703,"name":"black"}],
+        "defaultGraphicsColor": {"id":702,"name":"blue"}
+	},{
+		"productId": 3002,
+		"name": "AXR Stream",
+        "description": "AXR stream motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"defaultColor": {"id":504,"name":"black"},
+		"graphics": [{"id":601,"name":"flare"}, {"id":602,"name":"stripes"},{"id":603,"name":"flame"}],
+		"defaultGraphics": {"id":603, "name":"stripes"},
+		"graphicsColors": [{"id":701,"name":"red"}, {"id":702,"name":"yellow"}, {"id":703,"name":"black"}],
+        "defaultGraphicsColor": {"id":703,"name":"red"}
+	},{
+		"productId": 3001,
+		"name": "AXR32",
+        "description": "AGV PISTA GP DOT motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"defaultColor": {"id":502,"name":"black"},
+		"graphics": [{"id":601,"name":"flare"}, {"id":602,"name":"mono"},{"id":603,"name":"stripes"}],
+		"defaultGraphics": {"id":601, "name":"flare"},
+		"graphicsColors": [{"id":701,"name":"red"}, {"id":702,"name":"blue"}, {"id":703,"name":"black"}],
+        "defaultGraphicsColor": {"id":702,"name":"blue"}
+	}]
+        

@@ -1,0 +1,38 @@
+<div id="ax-products">
+  <div class="products-list">
+    <div class="product-block" ng-repeat="product in productsList" >
+      <div class="product-details" ng-init="detailsDisabled=true">
+        <div id="product-title"><input type="text" ng-model="product.name" value="{{product.name}}" ng-disabled="detailsDisabled"/></div>
+        <div id="product-description"><textarea ng-model="product.description" ng-disabled="detailsDisabled">{{product.description}}</textarea></div>
+      </div>
+      <div class="action-links">
+      	<a ng-click="detailsDisabled = false" ng-show="detailsDisabled">Edit</a>
+      	<a ng-click="detailsDisabled = true;saveProduct(product)" ng-show="!detailsDisabled">Save</a>
+      	<a ng-click="deleteProduct(product.productId)">Delete</a>
+      	<a href="" ui-sref="products_color({modelId: {{product.productId}}})">Colors</a>
+      	<a href="" ui-sref="products_features({modelId: {{product.productId}}})">Features</a>
+      </div>
+    </div>
+  </div>
+  <div class="new-product-block">
+  	<div class="title">Add New Product</div>
+  	<form name="productsForm" ng-submit="addNewProduct(productsForm.$valid)" novalidate>
+ 		<div class="form-group">
+			<div class="label">Name</div>
+			<div class="field"><input type="text" name="name" ng-model="product.name" ng-minlength="3" ng-maxlength="30" required/></div>
+			<p ng-show="productsForm.name.$error.minlength" class="error-block">Name is too short.</p>
+			<p ng-show="productsForm.name.$error.maxlength" class="error-block">Name is too long.</p>
+		</div>
+		<div class="form-group">
+			<div class="label">Description</div>
+			<div class="field"><textarea name="message" ng-model="product.description" required ng-maxlength="800" /></div>
+            <p ng-show="productsForm.message.$error.maxlength" class="error-block">Message cannot exceed 800 characters.</p>
+		</div>
+	  	<div class="form-group">
+	  		<button id="submit-btn" type="submit" ng-disabled="productsForm.$invalid">Add</button>
+	  	</div>
+  	</form>
+  	<div id="message" ng-show="result">{{result}}</div>
+  </div>
+</div>
+

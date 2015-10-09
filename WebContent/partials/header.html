@@ -1,0 +1,14 @@
+<div id="ax-header" ng-controller="HeadersController">
+  <div id="ax-logo">
+  <img alt="" ng-src="img/logo.gif">
+  </div>
+  <ul class="ax-navbar" ng-show="loginCheck()">
+    <li><a ui-sref="home">Slider</a></li>
+    <li><a ui-sref="latest">Latest Designs</a></li>
+    <li><a ui-sref="products">{{products}}</a></li>
+    <li><a ui-sref="components">Components</a></li>
+    <li><a ui-sref="blocks">Blocks</a></li>
+    <li><a ui-sref="dealers">Dealers</a></li>
+    <li><a href="" ng-click="logout()" > Logout</a></li>
+  </ul>
+</div>

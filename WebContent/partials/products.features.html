@@ -1,0 +1,37 @@
+<div id="ax-product-feature">
+  <div id="drilldown">{{product.name}}</div>
+  <div class="product-feature-list">
+    <div class="product-feature-block" ng-repeat="productFeature in productFeatures" >
+    <div class="product-image">  
+       <img ng-src="products/{{product.productId}}/features/{{product.productId}}_{{product.productFeatureId}.jpg"></img>
+    </div>
+   	<div id="product-feature-name">{{productFeature.name}}</div>
+   	<div class="action-links">
+    	<a ng-click="deleteProductFeature(productFeature.productFeatureId)">Delete</a>
+   	</div>
+      
+    </div>
+  </div>
+  <div class="new-product-feature-block">
+  	<div class="title">Add New Product Feature</div>
+  	<form name="productFeatureForm" action="addProductFeature.do" method="post" enctype="multipart/form-data">
+ 		<input style="display:none" type="text" name="productId" value="{{product.productId}}" />
+ 		<div class="form-group">
+			<div class="label">Feature Name</div>
+			<div class="field"><input type="text" name="featureName" ng-model="productFeature.featureName" ng-minlength="3"  required/></div>
+			<p ng-show="productFeatureForm.name.$error.minlength" class="error-block">Name is too short.</p>
+		</div>
+		<div class="form-group">
+			<div class="label">Feature Image</div>
+			<div class="field"><input type="file" name="featureImage" id="featureImage"/></div>
+			
+		</div>
+	  	<div class="form-group">
+	  	<input id="submit-btn" type="submit" value="add"/>
+	  		<!-- <button id="submit-btn" type="submit" >Add</button> -->
+	  	</div>
+  	</form>
+  	<div id="message" ng-show="result">{{result}}</div>
+  </div>
+</div>
+

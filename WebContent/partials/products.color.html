@@ -1,0 +1,34 @@
+<div id="ax-product-colors">
+  <div id="drilldown">{{product.name}}</div>
+  <div class="product-colors-list">
+    <div class="product-color-block" ng-repeat="productColor in productColors" >
+      <div class="product-color-details" ng-init="detailsDisabled=true">
+      	<div id="product-color-default"><input name="defaultColor" id="default-color-{{productColor.productColorId}}" type="radio" ng-model="defaultColorId" ng-disabled="detailsDisabled" ng-value="productColor.productColorId"/></div>
+        <div id="product-color-name"><input type="text" ng-model="productColor.name" value="{{productColor.name}}" ng-disabled="detailsDisabled"/></div>
+      	<div class="action-links">
+	      	<a ng-click="detailsDisabled = false" ng-show="detailsDisabled">Edit</a>
+	      	<a ng-click="detailsDisabled = true;saveProductColor(productColor, defaultColorId)" ng-show="!detailsDisabled">Save</a>
+	      	<a ng-click="deleteProductColor(productColor.productColorId)">Delete</a>
+	      	<a href="" ui-sref="products_graphics({modelId: {{product.productId}}, colorId: {{productColor.productColorId}}, colorName: '{{productColor.name}}'})">Graphics</a>
+      	</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="new-product-color-block">
+  	<div class="title">Add New Product Color</div>
+  	<form name="productColorForm" ng-submit="addNewProductColor(productColorForm.$valid)" novalidate>
+ 		<div class="form-group">
+			<div class="label">Name</div>
+			<div class="field"><input type="text" name="name" ng-model="productColor.name" ng-minlength="3" ng-maxlength="30" required/></div>
+			<p ng-show="productColorForm.name.$error.minlength" class="error-block">Name is too short.</p>
+			<p ng-show="productColorForm.name.$error.maxlength" class="error-block">Name is too long.</p>
+		</div>
+	  	<div class="form-group">
+	  		<button id="submit-btn" type="submit" ng-disabled="productColorForm.$invalid">Add</button>
+	  	</div>
+  	</form>
+  	<div id="message" ng-show="result">{{result}}</div>
+  </div>
+</div>
+

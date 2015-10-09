@@ -1,0 +1,51 @@
+<div id="ax-latest-designs">
+    <div class="new-latest-design">
+  	<div class="title">Add New Latest Design</div>
+  	<form name="latestDesignForm" ng-submit="addLatestDesign(latestDesignForm.$valid)">
+		<div class="form-group">
+			<div class="label">Product</div>
+			<div class="field">
+				<select name = "product" ng-model="latestDesign.selectedProduct" ng-change="loadColors(latestDesign.selectedProduct)" required>
+                    <option ng-repeat="product in productsList" value="{{product.productId}}">{{product.name}}</option>
+                </select>
+			</div>
+		</div>
+		
+		<div class="form-group" ng-show="productColors.length > 0">
+			<div class="label">Color</div>
+			<div class="field">
+				<select name = "color" ng-model="latestDesign.selectedColor" ng-change="loadGraphics(latestDesign.selectedProduct, latestDesign.selectedColor)"  required>
+                    <option ng-repeat="productColor in productColors" value="{{productColor.productColorId}}">{{productColor.name}}</option>
+                </select>
+			</div>			
+		</div>
+		
+		<div class="form-group" ng-show="productGraphics.length > 0">
+			<div class="label">Graphics</div>
+			<div class="field">
+				<select name = "graphics"  ng-model="latestDesign.selectedGraphics" ng-change="loadGraphicsColors(latestDesign.selectedProduct, latestDesign.selectedGraphics)" required>
+                    <option ng-repeat="productGraphic in productGraphics" value="{{productGraphic.productGraphicsId}}">{{productGraphic.name}}</option>
+                </select>
+			</div>			
+		</div>
+		
+		<div class="form-group" ng-show="productGraphicsColors.length > 0">
+			<div class="label">Graphics Color</div>
+			<div class="field">
+				<select name = "graphicsColor" ng-model="latestDesign.graphicsColor" required>
+                    <option ng-repeat="productGraphicsColor in productGraphicsColors" value="{{productGraphicsColor.productGraphicsColorId}}">{{productGraphicsColor.name}}</option>
+                </select>
+			</div>			
+		</div>
+	  	<input id="submit-btn" type="submit" value="add"/>
+  	</form>
+  	<div id="message" ng-show="result">{{result}}</div>
+  </div>
+  <div class="latest-designs">
+    <div class="designs-block" ng-repeat="latestDesign in latestDesigns" > 
+        <img ng-src="../products/{{latestDesign.productId}}/{{latestDesign.productId}}_{{latestDesign.colorId}}_{{latestDesign.graphicsId}}_{{latestDesign.graphicsColorId}}_f.jpg"></img>
+    	<button ng-click="deleteLatestDesign(latestDesign.latestDesignId)">Delete</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,37 @@
+<div id="ax-product-graphics-color">
+  <div id="drilldown">{{product.name}}>{{colorName}}>{{graphicsName}}</div>
+  <div class="product-graphics-color-list">
+    <div class="product-graphics-color-block" ng-repeat="productGraphicsColor in productGraphicsColors" >
+      <div class="product-image">  
+          <img ng-src="products/{{product.productId}}/{{product.productId}}_{{product.productColorId}}_{{product.productGraphicsColorId}}_{{product.productGraphicsColorColorId}}_n.png"></img>
+      </div>
+      <div class="product-graphics-color-details" ng-init="detailsDisabled=true">
+      	<div id="product-graphics-color-default"><input name="defaultGraphicsColor" id="default-graphics-{{productGraphicsColor.productGraphicsColorId}}" type="radio" ng-model="defaultGraphicsColorId" ng-disabled="detailsDisabled" ng-value="productGraphicsColor.productGraphicsColorId"/></div>
+        <div id="product-graphics-color-name"><input type="text" ng-model="productGraphicsColor.name" value="{{productGraphicsColor.name}}" ng-disabled="detailsDisabled"/></div>
+      	<div class="action-links">
+	      	<a ng-click="detailsDisabled = false" ng-show="detailsDisabled">Edit</a>
+	      	<a ng-click="detailsDisabled = true;saveProductGraphicsColor(productGraphicsColor, defaultGraphicsColorId)" ng-show="!detailsDisabled">Save</a>
+	      	<a ng-click="deleteProductGraphicsColor(productGraphicsColor.productGraphicsColorId)">Delete</a>
+	      	<a href="" ui-sref="products_graphics_color({modelId: {{product.productId}}, colorId: {{productGraphicsColor.productColorId}}, GraphicsColorId: {{productGraphicsColor.productGraphicsColorId}}})">Graphics Color</a>
+      	</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="new-product-graphics-color-block">
+  	<div class="title">Add New Product Graphics Color</div>
+  	<form name="productGraphicsColorForm" ng-submit="addNewProductGraphicsColor(productGraphicsColorForm.$valid)" novalidate>
+ 		<div class="form-group">
+			<div class="label">Name</div>
+			<div class="field"><input type="text" name="name" ng-model="productGraphicsColor.name" ng-minlength="3" ng-maxlength="30" required/></div>
+			<p ng-show="productGraphicsColorForm.name.$error.minlength" class="error-block">Name is too short.</p>
+			<p ng-show="productGraphicsColorForm.name.$error.maxlength" class="error-block">Name is too long.</p>
+		</div>
+	  	<div class="form-group">
+	  		<button id="submit-btn" type="submit" ng-disabled="productGraphicsColorForm.$invalid">Add</button>
+	  	</div>
+  	</form>
+  	<div id="message" ng-show="result">{{result}}</div>
+  </div>
+</div>
+

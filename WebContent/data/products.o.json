@@ -1,0 +1,36 @@
+{
+	products: [{
+		productId: 3001,
+		name: 'AXR32',
+		colors: ['red', 'green', 'black'],
+		defaultColor: 'red',
+		features: [{ 
+						name:'feature1',
+					  	description:'feautre has smooth finishing', 
+					  	img:'feature1.png'
+				  },{
+				  		name:'feature2',
+					  	description:'feautre has rough finishing', 
+					  	img:'feature2.png'
+				  }],
+		graphics: ['flare', 'guitar', 'flame'],
+		defaultGraphics: 'flare'
+	},{
+		productId: 3002,
+		name: 'AXR75',
+		colors: ['red', 'green', 'matt-black', 'pink'],
+		defaultColor: 'red',
+		features: [{ 
+						name:'feature1',
+					  	description:'feautre has smooth finishing', 
+					  	img:'feature1.png'
+				  },{
+				  		name:'feature2',
+					  	description:'feautre has rough finishing', 
+					  	img:'feature2.png'
+				  }],
+		graphics: ['splash', 'jazz', 'swirl'],
+		defaultGraphics: 'splash'
+	}]
+}
+        

@@ -1,0 +1,72 @@
+	[{
+		"slideId": 1001,
+		"image": "images/image1001.jpg",
+		"transition": "shiftTB",
+		"captions": [{
+			"image": "images/caption1001_1.jpg",
+			"transition": "top"
+		},{
+			"text": "New Arrival",
+			"transition": "bottomLeft"
+		},{
+			"image": "images/caption1001_2.jpg",
+			"transition": "bottom"
+		}] 
+	},{
+		"slideId": 1002,
+		"image": "images/image1002.jpg",
+		"transition": "shiftLRF",
+		"captions": [{
+			"image": "images/caption1002_1.jpg",
+			"transition": "bottomRight"
+		},{
+			"text": "The hunk",
+			"transition": "bottomRight"
+		},{
+			"image": "images/caption1002_2.jpg",
+			"transition": "topRight"
+		}] 
+	},{
+		"slideId": 1003,
+		"image": "images/image1003.jpg",
+		"transition": "switch",
+		"captions": [{
+			"image": "images/caption1003_1.jpg",
+			"transition": "topRight"
+		},{
+			"text": "Vintage style",
+			"transition": "bottomLeft"
+		},{
+			"image": "images/caption1003_2.jpg",
+			"transition": "topRight"
+		}] 
+	},{
+		"slideId": 1004,
+		"image": "images/image1004.jpg",
+		"transition": "squares",
+		"captions": [{
+			"image": "images/caption1004_1.jpg",
+			"transition": "bottomRight"
+		},{
+			"text": "Evergreen",
+			"transition": "topRight"
+		},{
+			"image": "images/caption1004_2.jpg",
+			"transition": "bottomLeft"
+		}] 
+	},{
+		"slideId": 1005,
+		"image": "images/image1005.jpg",
+		"transition": "rotateAxis",
+		"captions": [{
+			"image": "images/caption1004_1.jpg",
+			"transition": "bottomRight"
+		},{
+			"text": "Evergreen",
+			"transition": "topLeft"
+		},{
+			"image": "images/caption1004_2.jpg",
+			"transition": "bottomRight"
+		}] 
+	}]
+        

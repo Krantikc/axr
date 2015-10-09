@@ -1,0 +1,59 @@
+[{
+		"productId": 3001,
+		"name": "AXR32",
+            "description": "AGV PISTA GP DOT motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"colors": [{"id":501,"name":"red"}, {"id":502,"name":"green"},{"id":503,"name":"black"}],
+		"defaultColor": {"id":503,"name":"black"},
+		"features": [{ 
+						"name":"feature1",
+					  	"description":"feautre has smooth finishing", 
+					  	"img":"feature1.png"
+				  },{
+				  		"name":"feature2",
+					  	"description":"feautre has rough finishing", 
+					  	"img":"feature2.png"
+				  }],
+		"graphics": [{"id":601,"name":"flare"}, {"id":602,"name":"guitar"},{"id":603,"name":"flame"}],
+		"defaultGraphics": {"id":601, "name":"flare"},
+		"graphicsColors": [{"id":701,"name":"red"}, {"id":702,"name":"yellow"}, {"id":703,"name":"black"}],
+        "defaultGraphicsColor": {"id":702,"name":"yellow"}
+	},{
+		"productId": 3002,
+		"name": "AXR Stream",
+            "description": "AXR stream motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"colors": [{"id":501,"name":"red"}, {"id":502,"name":"black"},{"id":503,"name":"green"}],
+		"defaultColor": {"id":502,"name":"black"},
+		"features": [{ 
+						"name":"feature1",
+					  	"description":"feautre has smooth finishing", 
+					  	"img":"feature1.png"
+				  },{
+				  		"name":"feature2",
+					  	"description":"feautre has rough finishing", 
+					  	"img":"feature2.png"
+				  }],
+		"graphics": [{"id":601,"name":"flare"}, {"id":602,"name":"stripes"},{"id":603,"name":"flame"}],
+		"defaultGraphics": {"id":602, "name":"stripes"},
+		"graphicsColors": [{"id":701,"name":"red"}, {"id":702,"name":"yellow"}, {"id":703,"name":"black"}],
+        "defaultGraphicsColor": {"id":701,"name":"red"}
+	},{
+		"productId": 3001,
+		"name": "AXR32",
+            "description": "AGV PISTA GP DOT motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"colors": [{"id":501,"name":"red"}, {"id":502,"name":"green"},{"id":503,"name":"black"}],
+		"defaultColor": {"id":503,"name":"black"},
+		"features": [{ 
+						"name":"feature1",
+					  	"description":"feautre has smooth finishing", 
+					  	"img":"feature1.png"
+				  },{
+				  		"name":"feature2",
+					  	"description":"feautre has rough finishing", 
+					  	"img":"feature2.png"
+				  }],
+		"graphics": [{"id":601,"name":"flare"}, {"id":602,"name":"guitar"},{"id":603,"name":"flame"}],
+		"defaultGraphics": {"id":601, "name":"flare"},
+		"graphicsColors": [{"id":701,"name":"red"}, {"id":702,"name":"yellow"}, {"id":703,"name":"black"}],
+        "defaultGraphicsColor": {"id":702,"name":"yellow"}
+	}]
+        

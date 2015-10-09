@@ -1,0 +1,44 @@
+<div id="ax-contacts">
+	<div id="contacts-title">{{contactUsTitle}}</div>
+	<div id="contact-contents">
+	<div id="contacts-form">
+		<form name="contactsForm" ng-submit="submitForm(contactsForm.$valid)" novalidate>
+				<p ng-show="result" id="result-message">{{result}}</p>
+			<div class="form-group">
+				<div class="label">Name</div>
+				<div class="field"><input type="text" name="name" ng-model="enquiry.name" ng-minlength="3" ng-maxlength="30" required/></div>
+				<p ng-show="contactsForm.name.$error.minlength" class="error-block">Name is too short.</p>
+				<p ng-show="contactsForm.name.$error.maxlength" class="error-block">Name is too long.</p>
+			</div>
+			<div class="form-group">
+				<div class="label">Email</div>
+				<div class="field"><input type="email" name="email" ng-model="enquiry.email" required/></div>
+				<p ng-show="contactsForm.email.$error.email" class="error-block">Please enter valid email.</p>
+			</div>
+			<div class="form-group">
+				<div class="label">Mobile</div>
+				<div class="field"><input type="tel" name="mobile" ng-pattern="/^[(]{0,1}[0-9]{3}[)\.\- ]{0,1}[0-9]{3}[\.\- ]{0,1}[0-9]{4}$/" ng-model="enquiry.mobile" required/></div>
+	 			<p ng-show="contactsForm.mobile.$error.pattern" class="error-block">Please enter valid mobile number.</p>
+			</div>
+			<div class="form-group">
+				<div class="label">Enquiry</div>
+				<div class="field"><textarea name="message" ng-model="enquiry.message" required ng-maxlength="600" /></div>
+	                  <p ng-show="contactsForm.message.$error.maxlength" class="error-block">Message cannot exceed 600 characters.</p>
+			</div>
+			<button id="submit-btn" ng-disabled="contactsForm.$invalid">Submit</button>
+		</form>
+	</div>
+		<div id="contacts-info">
+		    <div class="title">Email</div>
+			<div class="contacts-emails">info@axr.com</div>
+			<div class="contacts-emails">sales@axr.com</div>
+			<div class="contacts-emails">info@axr.com</div>
+			
+			<div class="title">Phone</div>
+			<div class="contacts-phone">942211221133</div>
+			
+			<div class="title">Address</div>
+			<div class="contacts-address">RYDER HELMETS <br/>Plot no 117 A&B, K I A D B Industrial Estate, Honaga,<br/> Belgaum -  591 113 <br/>Karnataka</div>
+		</div>
+	</div>
+</div>

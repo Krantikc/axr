@@ -1,0 +1,31 @@
+<div id="ax-components">
+  <div id="drilldown">{{product.name}}</div>
+  <div class="components-list">
+  	<div class="component" >
+      <div class="component-details" ng-init="detailsDisabled=true">
+      	<div class="header">Name</div>
+      	<div class="header">Background Color</div>
+      	<div class="header">Font Size</div>
+      	<div class="header">Font Color</div>
+      	<div class="header">Font Hover Color</div>
+      	<div class="header">Hover Border Color</div>
+      </div>
+    </div>
+    <div class="component" ng-repeat="component in components" >
+      <div class="component-details" ng-init="detailsDisabled=true">
+      	<div class="input-fields">{{component.name}}</div>
+      	<div class="input-fields"><input type="text" value="{{component.backgroundColor}}" ng-model="component.backgroundColor" ng-disabled="detailsDisabled"/></div>
+      	<div class="input-fields"><input type="number" value="{{component.fontSize}}" ng-model="component.fontSize" min="12" max="30" ng-disabled="detailsDisabled"/></div>
+      	<div class="input-fields"><input type="text" value="{{component.fontColor}}" ng-model="component.fontColor" ng-disabled="detailsDisabled"/></div>
+      	<div class="input-fields"><input type="text" value="{{component.fontHoverColor}}" ng-model="component.fontHoverColor" ng-disabled="detailsDisabled"/></div>
+      	<div class="input-fields"><input type="text" value="{{component.hoverBorderColor}}" ng-model="component.hoverBorderColor" ng-disabled="detailsDisabled"/></div>
+      	<div class="action-links">
+	      	<a ng-click="detailsDisabled = false" ng-show="detailsDisabled">Edit</a>
+	      	<a ng-click="detailsDisabled = true;updateComponent(component)" ng-show="!detailsDisabled">Save</a>
+	    </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+

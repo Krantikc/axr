@@ -1,0 +1,17 @@
+[{
+		"dealerId": 201,
+		"name": "AGV",
+        "description": "AGV PISTA GP DOT motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"image": "dealer201.jpg"
+	},{
+		"dealerId": 202,
+		"name": "Lotus",
+        "description": "Lotus DOT motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"image": "dealer202.jpg"
+	},{
+		"dealerId": 203,
+		"name": "VEGA",
+        "description": "VEGA motorcycle helmet. Top of the range helmet for race use that provides superb levels of protection and ergonomics.",
+		"image": "dealer203.jpg"
+	}]
+        

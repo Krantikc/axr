@@ -1,0 +1,143 @@
+<div id="ax-slides">
+  <div id="drilldown">{{product.name}}>{{colorName}}>{{graphicsName}}</div>
+  
+    <div class="new-slide-block">
+  	<div class="title">Add New Slide</div>
+  	<form name="slideForm" action="createSlide.do" method="post" enctype="multipart/form-data">
+ 		<div class="form-group">
+			<div class="label">Name</div>
+			<div class="field"><input type="text" name="name" ng-model="slide.label" ng-minlength="3" ng-maxlength="30" required/></div>
+			<p ng-show="slideForm.name.$error.minlength" class="error-block">Name is too short.</p>
+			<p ng-show="slideForm.name.$error.maxlength" class="error-block">Name is too long.</p>
+		</div>
+		
+		<div class="form-group">
+			<div class="label">Image</div>
+			<div class="field"><input type="file" name="slideImage" id="slideImage"/></div>
+		</div>
+		
+		<div class="form-group">
+			<div class="label">Transition<img src="img/magic-wand.png" onclick="window.open('slideshow-transitions.html', 'myWindow', 'width=1000, height=600')"/></div>
+			<div class="field">
+				<select name = "slideTransition" required>
+                    <option ng-repeat="transition in dropdowns.sliderTransitions" value="{{transition}}">{{transition}}</option>
+                </select>
+			</div>			
+		</div>
+		
+		<fieldset>
+			<legend>Caption 1</legend>
+		
+		
+			<div class="form-group">
+				<div class="label">Caption Image</div>
+				<div class="field"><input type="file" name="captionOneImage"/></div>
+			</div>
+			
+			<div class="form-group">
+				<div class="label">Caption Transition</div>
+				<div class="field">
+					<select name = "captionOneTransition" required>
+	                    <option ng-repeat="transition in dropdowns.captionTransitions" value="{{transition}}">{{transition}}</option>
+	                </select>
+	            </div>			
+			</div>
+			
+			<div class="form-group">
+				<div class="label">Caption Position</div>
+				<div class="field">
+					<select name = "captionOnePosition" >
+	                    <option ng-repeat="position in dropdowns.captionPositions" value="{{position}}">{{position}}</option>
+	                </select>
+				</div>			
+			</div>
+		
+		</fieldset>
+		
+		<fieldset>
+			<legend>Caption 2</legend>
+		
+		
+			<div class="form-group">
+				<div class="label">Caption Image</div>
+				<div class="field"><input type="file" name="captionTwoImage" /></div>
+			</div>
+			
+			<div class="form-group">
+				<div class="label">Caption Transition</div>
+				<div class="field">
+					<select name = "captionTwoTransition" required>
+	                    <option ng-repeat="transition in dropdowns.captionTransitions" value="{{transition}}">{{transition}}</option>
+	                </select>
+	            </div>			
+			</div>
+			
+			<div class="form-group">
+				<div class="label">Caption Position</div>
+				<div class="field">
+					<select name = "captionTwoPosition">
+	                    <option ng-repeat="position in dropdowns.captionPositions" value="{{position}}">{{position}}</option>
+	                </select>
+				</div>			
+			</div>
+		
+		</fieldset>
+		
+		<fieldset>
+			<legend>Caption 3</legend>
+		
+		
+			<div class="form-group">
+				<div class="label">Caption Image</div>
+				<div class="field"><input type="file" name="captionThreeImage" /></div>
+			</div>
+			
+			<div class="form-group">
+				<div class="label">Caption Transition</div>
+				<div class="field">
+					<select name = "captionThreeTransition" required>
+	                    <option ng-repeat="transition in dropdowns.captionTransitions" value="{{transition}}">{{transition}}</option>
+	                </select>
+	            </div>			
+			</div>
+			
+			<div class="form-group">
+				<div class="label">Caption Position</div>
+				<div class="field">
+					<select name = "captionThreePosition">
+	                    <option ng-repeat="position in dropdowns.captionPositions" value="{{position}}">{{position}}</option>
+	                </select>
+				</div>			
+			</div>
+		
+		</fieldset>
+	  	<input id="submit-btn" type="submit" value="add"/>
+  	</form>
+  	<div id="message" ng-show="result">{{result}}</div>
+  </div>
+  <div class="slides-list">
+    <div class="slides-block" ng-repeat="slideDetails in slidesData" >
+      <div class="slide-image">  
+          <img ng-src="../slider/{{slideDetails.slide.image}}"></img>
+      </div>
+      
+      <div class="slides-details" ng-init="detailsDisabled=true">
+      	<div class="slide-label">{{slideDetails.slide.label}}</div>
+      	<div class="slide-transition">  
+          {{slideDetails.slide.transition}}
+      	</div>
+      	<div class="slide-captions"  ng-repeat="caption in slideDetails.captions">
+      		<div id="caption-image"><img alt="" ng-src="../slider/{{caption.image}}" /></div>
+      		<div id="caption-transition">Position : <b>{{caption.position}}</b></div>
+      		<div id="caption-transition">Transition : <b>{{caption.transition}}</b></div>
+      	</div>
+      	<div class="action-links">
+	      	<a ng-click="deleteSlide(slideDetails.slide.slideId)">Delete</a>
+      	</div>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,68 @@
+<!doctype html>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<html>
+<head>
+  <title>AXR Helmets</title>
+  
+  <!-- Application Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" ></link>
+  
+  <!-- Plugins CSS libraries --> 
+  <link rel="stylesheet" href="libs/zoom/zoom.css" ></link>
+   
+  <!-- Dependency Script libraries -->
+  <script src="libs/jquery-1.11.2.min.js"></script>
+  <script src="libs/angular.min.js"></script>
+  <script src="libs/angular-ui-router.min.js"></script>
+  
+  <!-- Features Script libraries -->
+  <script src="libs/ng-file-upload-all.min.js"></script>
+  <script src="libs/ngStorage.js"></script>
+  
+  
+  <!-- UI Plugins Script libraries -->
+  <script src="libs/zoom/jquery.zoom.js"></script>
+  <script src="libs/jssor/jssor.js"></script>
+  <script src="libs/jssor/jssor.slider.js"></script>
+ <!--  <script src="libs/jssor/jssor.slider.mini.js"></script> -->
+
+
+   <!-- Application scripts -->
+  <script src="app/ax_app.js"></script>
+  <script src="app/directives/ax_imageload.js"></script>
+  <script src="app/directives/ax_imageclick.js"></script>
+  <script src="app/directives/ax_elementready.js"></script>
+  <script src="app/directives/ax_redirect.js"></script>
+  <script src="app/services/ax_products.service.js"></script>
+  <script src="app/services/ax_contacts.service.js"></script>
+  <script src="app/services/ax_blocks.service.js"></script>
+  <script src="app/services/ax_dealers.service.js"></script>
+  <script src="app/services/ax_components.service.js"></script>
+  <script src="app/services/ax_auth.service.js"></script>
+  <script src="app/services/ax_home.service.js"></script>
+  <script src="app/utils/ax_utils.js"></script>
+  <script src="app/utils/ax_styles.js"></script>
+  <script src="app/utils/ax_localizations.js"></script>
+  
+  <script src="app/controllers/ax_main.js"></script>
+  <script src="app/controllers/ax_authentication.js"></script>
+  <script src="app/controllers/ax_headers.js"></script>
+  <script src="app/controllers/ax_blocks.js"></script>
+  <script src="app/controllers/ax_components.js"></script>
+  <script src="app/controllers/ax_home.js"></script>
+  <script src="app/controllers/ax_products.js"></script>
+  <script src="app/controllers/ax_latest.js"></script>
+  <script src="app/controllers/ax_about.js"></script>
+  <script src="app/controllers/ax_warranty.js"></script>
+  <script src="app/controllers/ax_dealers.js"></script>
+  <script src="app/controllers/ax_contacts.js"></script>
+</head>
+<body ng-app="AXRHelmets">
+<header>
+<ng-include src="'partials/header.html'"></ng-include>
+</header>
+<div ui-view id="ax-page-content" ng-controller="MainController"></div>
+<ng-include src="'partials/footer.html'"></ng-include>
+</body>
+
+</html>

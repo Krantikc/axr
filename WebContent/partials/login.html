@@ -1,0 +1,19 @@
+<div id="ax-login">
+	<div id="contacts-title">Login</div>
+	<div id="contact-contents">
+	<div id="contacts-form">
+		<form name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
+		    <p ng-show="result" id="result-message">{{result}}</p>
+			<div class="form-group">
+				<div class="label">Username</div>
+				<div class="field"><input type="text" ng-model="loginCredentials.username" ng-minlength="3" ng-maxlength="30" required/></div>
+				<p ng-show="contactsForm.name.$error.maxlength" class="error-block">Username is too long.</p>
+			</div>
+			<div class="form-group">
+				<div class="label">Password</div>
+				<div class="field"><input type="password"  ng-model="loginCredentials.password" required/></div>
+				<p ng-show="contactsForm.email.$error.email" class="error-block">Please enter valid email.</p>
+			</div>
+			<button id="submit-btn" ng-disabled="contactsForm.$invalid">Submit</button>
+	    </form>
+</div>

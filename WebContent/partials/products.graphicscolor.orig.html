@@ -1,0 +1,56 @@
+<div id="ax-product-graphics-color">
+  <div id="drilldown">{{product.name}}>{{colorName}}>{{graphicsName}}</div>
+  <div class="product-graphics-color-list">
+    <div class="product-graphics-color-block" ng-repeat="productGraphicsColor in productGraphicsColors" >
+      <div class="product-image">  
+          <img ng-src="products/{{product.productId}}/{{product.productId}}_{{product.productColorId}}_{{product.productGraphicsColorId}}_{{product.productGraphicsColorColorId}}_n.png"></img>
+      </div>
+      <div class="product-graphics-color-details" ng-init="detailsDisabled=true">
+      	<div id="product-graphics-color-default"><input name="defaultGraphicsColor" id="default-graphics-{{productGraphicsColor.productGraphicsColorId}}" type="radio" ng-model="defaultGraphicsColorId" ng-disabled="detailsDisabled" ng-value="productGraphicsColor.productGraphicsColorId"/></div>
+        <div id="product-graphics-color-name"><input type="text" ng-model="productGraphicsColor.name" value="{{productGraphicsColor.name}}" ng-disabled="detailsDisabled"/></div>
+      	<div class="action-links">
+	      	<a ng-click="detailsDisabled = false" ng-show="detailsDisabled">Edit</a>
+	      	<a ng-click="detailsDisabled = true;saveProductGraphicsColor(productGraphicsColor, defaultGraphicsColorId)" ng-show="!detailsDisabled">Save</a>
+	      	<a ng-click="deleteProductGraphicsColor(productGraphicsColor.productGraphicsColorId)">Delete</a>
+      	</div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="new-product-graphics-color-block">
+  	<div class="title">Add New Product Graphics Color</div>
+  	<form method="post" name="productGraphicsColorForm" ng-submit="addNewProductGraphicsColor(productGraphicsColorForm.$valid)"  enctype="multipart/form-data" novalidate>
+ 		<div class="form-group">
+			<div class="label">Name</div>
+			<div class="field"><input type="text" name="name" ng-model="productGraphicsColor.name" ng-minlength="3" ng-maxlength="30" required/></div>
+			<p ng-show="productGraphicsColorForm.name.$error.minlength" class="error-block">Name is too short.</p>
+			<p ng-show="productGraphicsColorForm.name.$error.maxlength" class="error-block">Name is too long.</p>
+		</div>
+		<div class="form-group">
+			<div class="label">Front Angle</div>
+			<div class="field"><input type="file" name="frontAngle" id="frontAngle" ng-model="frontAngle"/></div>
+			<div class="upload"><div class="uploaded" ng-if="frontAngleUploaded"><img src="img/ok.png"/></div><input type="button" ng-click="uploadFileAsStream('frontAngle')" value="Upload"/></div>
+		</div>
+		<div class="form-group">
+			<div class="label">Right Angle</div>
+			<div class="field"><input type="file" name="rightAngle" id="rightAngle" ng-model="productGraphicsColor.rightAngle"/></div>
+			<div class="upload"><div class="uploaded" ng-if="rightAngleUploaded"><img src="img/ok.png"/></div><input type="button" ng-click="uploadFileAsStream('rightAngle')" value="Upload"/></div>
+		</div>
+		<div class="form-group">
+			<div class="label">Back Angle</div>
+			<div class="field"><input type="file" name="backAngle" id="backAngle" ng-model="productGraphicsColor.backAngle"/></div>
+			<div class="upload"><div class="uploaded" ng-if="backAngleUploaded"><img src="img/ok.png"/></div><input type="button" ng-click="uploadFileAsStream('backAngle')" value="Upload"/></div>
+		</div>
+		<div class="form-group">
+			<div class="label">Left Angle</div>
+			<div class="field"><input type="file" name="leftAngle" id="leftAngle" ng-model="productGraphicsColor.leftAngle"/></div>
+			<div class="upload"><div class="uploaded" ng-if="leftAngleUploaded"><img src="img/ok.png"/></div><input type="button" ng-click="uploadFileAsStream('leftAngle')" value="Upload"/></div>
+		</div>
+	  	<div class="form-group">
+	  		<button id="submit-btn" type="submit" ng-disabled="productGraphicsColorForm.$invalid">Add</button>
+	  	</div>
+  	</form>
+  	<div id="message" ng-show="result">{{result}}</div>
+  </div>
+</div>
+
